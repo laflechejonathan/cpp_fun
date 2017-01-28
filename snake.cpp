@@ -9,10 +9,8 @@
 
 /**
  *
- * Stupid program that generates a maze using a randomized DFS,
- * renders it to the terminal using ncurses. Likely won't work
- * on Windows.
- *
+ * Very basic ncurses snake game
+ * 
  */
 
 using namespace std;
