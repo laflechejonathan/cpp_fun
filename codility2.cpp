@@ -2,7 +2,6 @@
 #include <vector>
 
 using namespace std;
-
 /*
  * For a period of 30 days and a list of dates when we are traveling,
  * calculate the minimum amount of money to spend on tickets - no 
@@ -67,7 +66,7 @@ int solution(vector<int> &A) {
         dates_to_fit++;
     }
 
-    cost_so_far += week_or_singles(dates_to_fit) + 500;
+    cost_so_far += week_or_singles(dates_to_fit);
 
     // second, left 2 right
 
@@ -75,7 +74,7 @@ int solution(vector<int> &A) {
     last_date_to_fit = A[0];
     dates_to_fit = 1;
 
-    for (size_t i = A[1]; i < A.size(); ++i) {
+    for (size_t i = 1; i < A.size(); ++i) {
 
         if (A[i] - last_date_to_fit > WEEK) {
             cost_so_far_2 += week_or_singles(dates_to_fit);
@@ -86,7 +85,7 @@ int solution(vector<int> &A) {
         dates_to_fit++;
     }
 
-    cost_so_far_2 += week_or_singles(dates_to_fit) + 500;
+    cost_so_far_2 += week_or_singles(dates_to_fit);
     cost_so_far = min(cost_so_far, cost_so_far_2);    
 
     // 25 is the upper bound, book tickets for every day.
